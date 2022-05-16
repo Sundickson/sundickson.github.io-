@@ -1,23 +1,35 @@
-$('#menu-icon').click(function(){
-        $('#menu-icon').toggleClass("active");
-        $('.navlist').toggleClass("active");
-    });
+// $('#menu-icon').click(function(){
+//         $('#menu-icon').toggleClass("active");
+//         $('.navlist').toggleClass("active");
+//     });
 
+// /*
+// let menu = document.queryselector("#menu-icon");
+// let navlist = document.queryselector(".navlist");
 
+// menu.addEventListener("click", function () {
+// 	navlist.classList.toggle("active");
+// });
 
+// window.onscroll = () => {
+// 	navlist.classList.remove("active");
+// };
 
+let menuIcon = document.querySelector(".menu-icon");
+let navlist = document.querySelector(".navlist");
 
+menuIcon.addEventListener("click", mobileMenu);
 
-/*
-let menu = document.queryselector("#menu-icon");
-let navlist = document.queryselector(".navlist");
+function mobileMenu() {
+  menuIcon.classList.toggle("active");
+  navlist.classList.toggle("active");
+}
 
-menu.addEventListener("click", function () {
-	navlist.classList.toggle("active");
-});
+const navLink = document.querySelectorAll(".nav-link");
 
-window.onscroll = () => {
-	navlist.classList.remove("active");
-};   
+navLink.forEach((n) => n.addEventListener("click", closeMenu));
 
-
+function closeMenu() {
+  menuIcon.classList.remove("active");
+  navlist.classList.remove("active");
+}
